@@ -167,6 +167,8 @@ uint16_t st7789_y_offset(void)
  **********************/
 static void st7789_send_cmd(lv_disp_drv_t *drv, uint8_t cmd)
 {
+
+#ifdef CONFIG_LV_
     disp_wait_for_pending_transactions();
     display_port_gpio_dc(drv, 0);
     disp_spi_send_data(&cmd, 1);

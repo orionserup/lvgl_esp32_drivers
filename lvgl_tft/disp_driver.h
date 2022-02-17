@@ -19,13 +19,13 @@ extern "C" {
 #endif
 
 #if defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ILI9341
-#include "ili9341.h"
+#include "ili9341/ili9341.h"
 #elif defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ILI9481
-#include "ili9481.h"
+#include "ili9481/ili9481.h"
 #elif defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ILI9488
-#include "ili9488.h"
+#include "ili9488/ili9488.h"
 #elif defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ST7789
-#include "st7789.h"
+#include "st7789/st7789.h"
 #elif defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ST7796S
 #include "st7796s.h"
 #elif defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ST7735S

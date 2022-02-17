@@ -212,7 +212,16 @@ static uint8_t send_data(lv_disp_drv_t *disp_drv, void *bytes, size_t bytes_len)
 
     uint8_t *data = (uint8_t *) bytes;
 
+#ifdef CONFIG_LV_DISP_PROTOCOL_SPI
+
+    return lvgl_spi
+
+#elif CONFIG_LV_DISP_PROTOCOL_I2C
+
     return lvgl_i2c_write(OLED_I2C_PORT, OLED_I2C_ADDRESS, data[0], data + 1, bytes_len - 1 );
+
+#endif
+
 }
 
 static uint8_t send_pixels(lv_disp_drv_t *disp_drv, void *color_buffer, size_t buffer_len)
